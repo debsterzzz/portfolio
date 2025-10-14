@@ -15,8 +15,17 @@ nav {display:flex;
   border-bottom-width: 1px;
   border-bottom-style:solid;
   border-bottom-color:oklch(80% 3% 200);
-  
 }
 nav a {flex: 1;
-  
+  text-decoration: none;
+}
+nav a.current {border: bottom width 0.4em;
+  border-bottom-color: cadetblue ;
+  padding-bottom: 0em;
+}
+html {--color-accent: oklch(62.759% 0.20046 254.953);
+  accent-color: var(--color-accent)}
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: calc(10px - 0.4em);
 }
