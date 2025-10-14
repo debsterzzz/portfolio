@@ -41,8 +41,14 @@ button {
   width:100%;
   box-sizing: border-box;
 }
+button {grid-column: 1/-1;}
 button:hover {
   background-color: oklch(45.386% 0.31188 264.941); /* slightly brighter accent on hover */
 }
-label {display: block;}
-
+label {display: block;
+display: contents;
+grid-template-columns: subgrid;
+grid-column: 1/-1;}
+form {display: grid;
+grid-template-columns: auto 1fr;
+gap: 1em;}
