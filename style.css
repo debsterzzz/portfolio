@@ -6,8 +6,17 @@ body { max-width:70ch;
 	 */
   font: 100%/1.5 system-ui;
 }
-nav {display:flex
+nav {display:flex;
+  text-decoration: none;
+  color:inherit;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-bottom-width: 1px;
+  border-bottom-style:solid;
+  border-bottom-color:oklch(80% 3% 200);
+  
 }
-nav a {
-  flex: 1;
+nav a {flex: 1;
+  
 }
