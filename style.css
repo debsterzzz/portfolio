@@ -52,3 +52,43 @@ grid-column: 1/-1;}
 form {display: grid;
 grid-template-columns: auto 1fr;
 gap: 1em;}
+
+.projects {
+  display: grid; /* turns the container into a grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* flexible responsive columns */
+  gap: 1.5em;
+}
+/* Each project card */
+.projects article {
+  display: grid; /* make each article a grid container */
+  grid-template-rows: subgrid; /* inherit row sizing from parent grid */
+  grid-row: span 3; /* each article spans 3 rows */
+  gap: 1em; /* space between elements inside each article */
+}
+
+/* Headings: remove default margin for tighter alignment */
+.projects article h2 {
+  margin: 0;}
+  /* Global heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;        /* tighter leading for headings */
+  text-wrap: balance;      /* balances line breaks for more even text */
+  margin-block: 0.5em;     /* gives some vertical space between sections */
+}
+
+/* Strong contrast for the main heading */
+h1 {
+  font-size: 400%;         /* 4× body text size for clear hierarchy */
+  font-weight: 700;        /* make it bold and visually dominant */
+}
+
+/* You can refine subheadings (optional) */
+h2 {
+  font-size: 200%;         /* smaller but still strong */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 150%;
+  font-weight: 500;
+}
