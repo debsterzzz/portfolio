@@ -6,3 +6,8 @@ body { max-width:70ch;
 	 */
   font: 100%/1.5 system-ui;
 }
+nav {display:flex
+}
+nav a {
+  flex: 1;
+}
