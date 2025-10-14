@@ -1,4 +1,4 @@
-body { max-width:70ch;
+body { max-width:100ch;
   margin-inline: max(1em, (100% - 100ch) / 2);
   
   /* Set line height to 1.5 times the font size
@@ -75,6 +75,12 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;      /* balances line breaks for more even text */
   margin-block: 0.5em;     /* gives some vertical space between sections */
 }
+/* Global heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;        /* tighter leading for headings */
+  text-wrap: balance;      /* balances line breaks for more even text */
+  margin-block: 0.5em;     /* gives some vertical space between sections */
+}
 
 /* Strong contrast for the main heading */
 h1 {
@@ -92,3 +98,12 @@ h3 {
   font-size: 150%;
   font-weight: 500;
 }
+section { display: block;
+border-top-width: 1px;
+border-top-color: black;
+border-top-style: double;}
+header { border-bottom: 1px grey solid;
+font-style:oblique;
+background-color: aliceblue;}
+li {
+  list-style-type:square;}
