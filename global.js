@@ -80,7 +80,9 @@ export async function fetchJSON(url) {
     if (!response.ok) {
   throw new Error(`Failed to fetch projects: ${response.statusText}`);
 }
+console.log('Response object:', response);
 const data = await response.json();
+console.log('Loaded JSON data:', data);
 return data;
   console.log(response);
   } catch (error) {
@@ -89,12 +91,34 @@ return data;
 }
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
   // Your code will go here
+  if(!containerElement) {
+    throw new Error('containerElement not found in DOM');
+  }
   containerElement.innerHTML = '';
+    // Handle an empty or invalid projects array
+  if (!Array.isArray(projects) || projects.length === 0) {
+    containerElement.innerHTML = '<p>No projects available at this time.</p>';
+    return;
+  }
+
+  // Validate the heading level (must be h1–h6)
+  if (!/^h[1-6]$/.test(headingLevel)) {
+    throw new Error('Invalid heading level. Use h1–h6.');
+  }
+
+  // Loop through each project object and create an <article>
+  projects.forEach(project => {
   const article = document.createElement('article');
+ // Handle missing properties gracefully
+    const title = project.title || 'Untitled Project';
+    const image = project.image || 'placeholder.jpg';
+    const description = project.description || 'No description available.';
+
   article.innerHTML = `
-    <h3>${project.title}</h3>
-    <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>
+    <${headingLevel}>${title}</${headingLevel}>
+    <img src="${image}" alt="${title}">
+    <p>${description}</p>
 `;
 containerElement.appendChild(article);
+});
 }
