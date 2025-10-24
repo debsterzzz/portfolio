@@ -89,7 +89,7 @@ return data;
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
-export function renderProjects(Projects, containerElement, headingLevel = 'h2') {
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   // Your code will go here
   if(!containerElement) {
     throw new Error('containerElement not found in DOM');
@@ -121,4 +121,9 @@ export function renderProjects(Projects, containerElement, headingLevel = 'h2') 
 `;
 containerElement.appendChild(article);
 });
+}
+export async function fetchGitHubData(username) {
+  // return statement here
+  return fetchJSON(`https://api.github.com/users/${username}`);
+ 
 }

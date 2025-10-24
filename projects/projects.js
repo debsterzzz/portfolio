@@ -11,6 +11,11 @@ async function initProjects() {
 
   // Render the projects
   renderProjects(projects, projectsContainer, 'h2');
+ // Step 4: Add dynamic count to the page title
+  const titleElement = document.querySelector('.projects-title');
+  if (titleElement && Array.isArray(projects)) {
+   titleElement.textContent = `My ${projects.length} Favorite Projects`;
+  }
 }
 
 // Call the async function
