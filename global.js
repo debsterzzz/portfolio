@@ -76,7 +76,7 @@ select.addEventListener("input", function (event) {
 export async function fetchJSON(url) {
   try {
     // Fetch the JSON file from the given URL
-    const response = await fetch(url);
+    const response = await fetch('../lib/projects.jason');
     if (!response.ok) {
   throw new Error(`Failed to fetch projects: ${response.statusText}`);
 }
@@ -89,7 +89,7 @@ return data;
     console.error('Error fetching or parsing JSON data:', error);
   }
 }
-export function renderProjects(project, containerElement, headingLevel = 'h2') {
+export function renderProjects(Projects, containerElement, headingLevel = 'h2') {
   // Your code will go here
   if(!containerElement) {
     throw new Error('containerElement not found in DOM');
