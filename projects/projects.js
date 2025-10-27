@@ -1,7 +1,7 @@
-import { fetchJSON, renderProjects } from '../global.js';
+import { fetchJSON, renderProjects} from '../global.js';
 async function initProjects() {
   // Fetch the data first
-  const projects = await fetchJSON('../lib/projects.json');
+  const projects = await fetchJSON('../lib/projects.jason');
 
   // Make sure data was fetched successfully
   console.log('Fetched projects:', projects);

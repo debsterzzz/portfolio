@@ -76,7 +76,7 @@ select.addEventListener("input", function (event) {
 export async function fetchJSON(url) {
   try {
     // Fetch the JSON file from the given URL
-    const response = await fetch('../lib/projects.jason');
+    const response = await fetch(url);
     if (!response.ok) {
   throw new Error(`Failed to fetch projects: ${response.statusText}`);
 }
@@ -124,6 +124,6 @@ containerElement.appendChild(article);
 }
 export async function fetchGitHubData(username) {
   // return statement here
-  return fetchJSON(`https://api.github.com/users/${username}`);
+  return await fetchJSON(`https://api.github.com/users/${username}`);
  
 }
