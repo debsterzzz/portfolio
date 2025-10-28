@@ -15,7 +15,7 @@ const BASE_PATH =
 let pages = [
   { url: '', title: 'Home' },
   { url: 'contact/', title:'Contact'},
-  { url: 'projects/', title: 'Projects' },
+  { url: 'projects/', title: 'Projects'},
   { url: 'resume/', title:'Resume'},
   { url: 'https://github.com/debsterzzz/portfolio', title:'GitHub'}
   // add the rest of your pages here
