@@ -138,4 +138,81 @@ label.color-scheme select {
   border-radius: 6px; /* (optional, for clean rounded corners) */
   display: block;     /* Removes weird whitespace under images */
 }
+.project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
 
+/* Style the year */
+.project-text .year {
+  color: oklch(50% 0.05 260);   /* subtle gray tone */
+  font-family:sans-serif;
+  font-variant-numeric:oldstyle-nums;
+  font-size: 90%;
+  margin: 0;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  list-style: none;
+  padding: 1em;
+  margin-top: 1.5em;
+  border: 1px solid var(--border-color, oklch(50% 10% 200 / 40%));
+  border-radius: 0.5em;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+}
+
+.legend .swatch {
+  width: 1em;
+  height: 1em;
+  background: var(--color);
+  border-radius: 3px;
+  display: inline-block;
+}
+.pie-container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap; /* ensures responsiveness */
+}
+
+.legend {
+  flex: 1; /* legend grows to fill available width */
+}
+#projects-pie-plot:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+#projects-pie-plot path {
+  transition: opacity 300ms;
+  cursor: pointer;
+}
+.selected {
+  --color: oklch(60% 45% 0) !important; /* distinct highlight color */
+}
+
+/* If a path has .selected → recolor it */
+.selected:is(path) {
+  fill: var(--color);
+}
+
+/* Also apply highlight to legend swatch */
+.legend .selected .swatch {
+  background: var(--color) !important;
+}
