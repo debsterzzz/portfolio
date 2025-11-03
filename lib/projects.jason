@@ -1,61 +1,73 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "title": "Deceptive Visualization Part1",
+        "year": "2025",
+        "image": "../images/Fewer Clinics, Fewer Abortions!.png",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam modi aut velit nesciunt rerum deserunt culpa earum, dolores quasi fuga maxime pariatur eveniet. Ratione maiores eaque dolorum fugiat aliquam fugit."
     },
     {
-        "title": "Corrupti adipisci quibusdam veritatis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "title": "Deceptive Visualization Part2",
+        "year": "2025",
+        "image": "https://github.com/debsterzzz/portfolio/blob/main/images/Fewer%20Clinics%20DNE%20Fewer%20Abortions.png?raw=true",
         "description": "Asperiores vero officiis quas quam fuga omnis officia quod suscipit saepe blanditiis! Quaerat consequuntur voluptatem, ipsum minima natus maxime dolor dicta eveniet, delectus quisquam at ratione laborum est obcaecati quis!"
     },
     {
         "title": "Error qui voluptate voluptas.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2025",
+        "image": "../images/Clinics vs abortions 2020.png",
         "description": "Ut dignissimos temporibus neque eligendi aliquid distinctio aspernatur maxime explicabo adipisci, tempora asperiores, laboriosam veritatis sed quia quis iure pariatur. Sequi molestias, voluptas tempore aliquid placeat iure voluptatum quia accusantium!"
     },
     {
         "title": "Deserunt expedita quam rem?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2025",
+        "image": "../images/Scatter plot Abortions Out-of-state.png",
         "description": "Ab nobis, veniam debitis ipsa ipsam ratione sit cum fugit. Dolore esse sit est quas aperiam, officia velit facilis quae! Ipsam quia et accusantium quod suscipit laudantium, aperiam consequuntur distinctio!"
     },
     {
         "title": "Sapiente voluptates impedit maxime.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2025",
+        "image": "https://github.com/debsterzzz/portfolio/blob/main/images/Less-Process%20Foods%20Cost%20more.png",
         "description": "Sapiente repellat obcaecati libero mollitia deleniti exercitationem quis. Quis repellendus incidunt molestiae. Modi excepturi earum quisquam sed, officia assumenda. Dolor voluptates temporibus officiis explicabo beatae architecto sit quisquam nemo suscipit?"
     },
     {
         "title": "Repellendus dolorem vero eum.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2025",
+        "image": "https://github.com/debsterzzz/portfolio/blob/main/images/Scatter%20plot%20Abortions%20Out-of-state.png",
         "description": "Neque, aliquam unde ipsum culpa, aspernatur quo nisi maxime optio eos dolore modi dicta? Dignissimos nobis officiis saepe non, atque vel explicabo rem dolore, possimus deleniti ab labore mollitia facere!"
     },
     {
         "title": "Placeat fuga odit mollitia.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "image": "../images/Grocery store boxplot.png",
         "description": "Suscipit possimus ipsa consectetur temporibus impedit sint non distinctio facilis itaque sit magnam blanditiis reiciendis rem sed officia incidunt optio, iure libero voluptates eaque ut molestias. Quae neque iusto ad!"
     },
     {
         "title": "Deserunt excepturi numquam facilis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "image": "../images/Less-Process Foods Cost more.png",
         "description": "Molestiae quos ipsam doloribus perferendis atque, similique veritatis provident hic voluptate. Corrupti non incidunt voluptatum saepe. Placeat id aspernatur dolorum porro commodi! Impedit in ullam at ratione reiciendis assumenda eveniet."
     },
     {
         "title": "Laudantium architecto quasi vel?",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "image": "../images/States with lowest abortion rates.png",
         "description": "Vel praesentium neque eligendi hic vitae aliquam unde nesciunt optio harum? Nobis amet, assumenda architecto voluptas sed, a odit quibusdam iure vitae recusandae, distinctio impedit sequi officia quis sit totam!"
     },
     {
         "title": "Minus a tenetur totam.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2024",
+        "image": "../images/Ultra Processed foods.png",
         "description": "Dolorem perspiciatis doloribus culpa fugit animi quo reiciendis. Id libero sequi quos, similique beatae illum quo debitis repellendus qui, perferendis nam laboriosam. Magni placeat odio molestias ipsam accusantium optio architecto!"
     },
     {
         "title": "Nobis nam voluptatibus repellat.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": "2023",
+        "image": "../images/BastianSolutions.png",
         "description": "Ipsam, saepe modi at nobis, enim aperiam voluptas recusandae vel quam corporis quasi expedita culpa? Suscipit tenetur molestiae similique nulla rerum ea excepturi quidem fugit, nemo amet, quasi quisquam adipisci."
     },
     {
         "title": "Blanditiis distinctio eligendi quo.",
+        "year": "2023",
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
         "description": "Ipsum itaque minus iusto facilis, provident doloribus perspiciatis non maxime quaerat, totam, adipisci aut eius explicabo in laborum. Ab ipsa pariatur placeat in perferendis voluptatum dicta totam sit repellendus hic."
     }
