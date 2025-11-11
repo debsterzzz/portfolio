@@ -216,3 +216,80 @@ label.color-scheme select {
   border-radius: 4px;
 }
 
+.stats {
+  display: flex;
+  gap: 2.5rem;          /* space between stat blocks */
+  flex-wrap: wrap;      /* allows wrapping on small screens */
+  align-items: baseline;
+  margin: 1rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 0;
+}
+
+.stats dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #666;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.stats dd {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.gridlines line {
+  stroke: #ccc;
+  stroke-opacity: 0.5;
+}
+
+.gridlines path {
+  display: none;
+}
+
+/* Tooltip structure */
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 1rem;
+  margin: 0;
+  padding: 0.75em 1em;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(64, 117, 222, 0.15);
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 1;
+  transition-duration: 500ms;
+  transition-property: opacity, visibility;
+}
+
+dl.info[hidden]:not(:hover, :focus-within) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Tooltip positioning */
+.tooltip {
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  z-index: 999;
+}
+
+/* Dot hover animation */
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}
+
