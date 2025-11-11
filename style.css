@@ -207,12 +207,12 @@ label.color-scheme select {
   --color: oklch(60% 45% 0) !important; /* distinct highlight color */
 }
 
-/* If a path has .selected → recolor it */
-.selected:is(path) {
-  fill: var(--color);
+.selected {
+  fill: oklch(60% 45% 0) !important;
 }
 
-/* Also apply highlight to legend swatch */
-.legend .selected .swatch {
-  background: var(--color) !important;
+.legend .selected {
+  background: oklch(60% 45% 0 / 20%);
+  border-radius: 4px;
 }
+
