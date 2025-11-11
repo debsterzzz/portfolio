@@ -14,8 +14,8 @@ const BASE_PATH =
     : '/portfolio/'; // GitHub Pages repo name
 let pages = [
   { url: '', title: 'Home' },
-  { url: 'meta/', title:'Meta'},
   { url: 'contact/', title:'Contact'},
+  { url: 'meta/', title:'Meta'},
   { url: 'projects/', title: 'Projects'},
   { url: 'resume/', title:'Resume'},
   { url: 'https://github.com/debsterzzz/portfolio', title:'GitHub'}
