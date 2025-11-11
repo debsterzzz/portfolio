@@ -86,10 +86,9 @@ function renderCommitInfo(data, commits) {
   const averageFileLength = d3.mean(fileLengths, (d) => d[1]);
   dl.append('dt').text('Average File Length');
   dl.append('dd').text(averageFileLength)
-
-
-
 }
+
+
 
 function renderTooltipContent(commit) {
   document.getElementById('commit-link').href = commit.url;
@@ -118,6 +117,44 @@ function updateTooltipPosition(event) {
   tooltip.style.top = `${event.clientY}px`;
 }
 
+function isCommitSelected(selection, commit, xScale, yScale) {
+  if (!selection) return false;
+  const [[x0, y0], [x1, y1]] = selection;
+  const cx = xScale(commit.datetime);
+  const cy = yScale(commit.hourFrac);
+  return cx >= x0 && cx <= x1 && cy >= y0 && cy <= y1;
+}
+
+function renderSelectionCount(selection, commits, xScale, yScale) {
+  const selected = selection
+    ? commits.filter((d) => isCommitSelected(selection, d, xScale, yScale))
+    : [];
+
+  const text = selected.length > 0 ? `${selected.length} commits selected` : `No commits selected`;
+  document.querySelector("#selection-count").textContent = text;
+
+  return selected;
+}
+
+function renderLanguageBreakdown(selection, commits, xScale, yScale) {
+  const selectedCommits = selection
+    ? commits.filter((d) => isCommitSelected(selection, d, xScale, yScale))
+    : [];
+
+  const container = document.getElementById("language-breakdown");
+  container.innerHTML = "";
+
+  if (selectedCommits.length === 0) return;
+
+  const lines = selectedCommits.flatMap((d) => d.lines);
+
+  const breakdown = d3.rollup(lines, (v) => v.length, (d) => d.type);
+
+  for (const [lang, count] of breakdown) {
+    const proportion = d3.format(".1~%")(count / lines.length);
+    container.innerHTML += `<dt>${lang}</dt><dd>${count} lines (${proportion})</dd>`;
+  }
+}
 
 
 function renderScatterPlot(data, commits) {
@@ -134,10 +171,10 @@ function renderScatterPlot(data, commits) {
   const xScale = d3
   .scaleTime()
   .domain(d3.extent(commits, (d) => d.datetime))
-  .range([0, width])
+  .range([40, width-10])
   .nice();
 
-  const yScale = d3.scaleLinear().domain([0, 24]).range([height, 0]);
+  const yScale = d3.scaleLinear().domain([0, 24]).range([height-30, 10]);
   
   const margin = { top: 10, right: 10, bottom: 30, left: 20 };
 
@@ -183,6 +220,7 @@ function renderScatterPlot(data, commits) {
   .attr('cx', (d) => xScale(d.datetime))
   .attr('cy', (d) => yScale(d.hourFrac))
   .attr('r', (d) => rScale(d.totalLines))
+  .attr("fill", "steelblue")
   .style('fill-opacity', 0.7) // Add transparency for overlapping dots
   .on('mouseenter', (event, commit) => {
     d3.select(event.currentTarget).style('fill-opacity', 1); // Full opacity on hover
@@ -190,6 +228,7 @@ function renderScatterPlot(data, commits) {
     updateTooltipVisibility(true);
     updateTooltipPosition(event);
   })
+  .on("mousemove", updateTooltipPosition)
   .on('mouseleave', (event) => {
     d3.select(event.currentTarget).style('fill-opacity', 0.7);
     updateTooltipVisibility(false);
@@ -215,8 +254,23 @@ function renderScatterPlot(data, commits) {
     .attr('transform', `translate(${usableArea.left}, 0)`)
     .call(yAxis);
 
-    
+     // ✅ Brush (AFTER dots) + raise dots so hover still works
+  const brush = d3.brush()
+    .extent([[40, 10], [width - 10, height - 30]])
+    .on("start brush end", (event) => {
+      const selection = event.selection;
+      d3.selectAll("circle").classed(
+        "selected",
+        commit => isCommitSelected(selection, commit, xScale, yScale)
+      );
+      renderSelectionCount(selection, commits, xScale, yScale);
+      renderLanguageBreakdown(selection, commits, xScale, yScale);
+    });
+
+  svg.call(brush);
+  svg.selectAll(".dots, .overlay ~ *").raise();
 }
+    
 
 
 
